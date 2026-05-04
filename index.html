@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Interaktif - Petualangan Luar Angkasa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ============================================
+         HALAMAN 1: ENTRANCE (Laman Pembuka)
+         ============================================ -->
+    <div id="page-entrance" class="page active">
+        <div class="space-background">
+            <!-- Bintang-bintang animasi -->
+            <div class="stars"></div>
+            
+            <!-- Planet bergerak -->
+            <div class="planet planet-1"></div>
+            <div class="planet planet-2"></div>
+            <div class="planet planet-3"></div>
+        </div>
+
+        <div class="entrance-content">
+            <h1 class="entrance-title">🚀 Jelajahi Galaksi</h1>
+            <p class="entrance-subtitle">Klik untuk memulai</p>
+            
+            <!-- Tombol bulat biru dengan efek hover -->
+            <button id="btn-play" class="btn-play">
+                <span class="play-icon">▶</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HALAMAN 2: MUSIK
+         ============================================ -->
+    <div id="page-music" class="page">
+        <div class="music-container">
+            <!-- Header -->
+            <div class="music-header">
+                <h2>🎵 Playlist Musik</h2>
+                <p class="subtitle-music">Pilih lagu untuk diputar</p>
+            </div>
+
+            <!-- Tombol Admin Mode (hanya untuk admin) -->
+            <div class="admin-section">
+                <button id="btn-admin" class="btn-admin">🔐 Mode Admin</button>
+                <div id="admin-panel" class="admin-panel hidden">
+                    <h3>Tambah Lagu Baru</h3>
+                    <input type="text" id="song-title" placeholder="Judul Lagu">
+                    <input type="text" id="song-url" placeholder="URL Audio (gunakan link .mp3)">
+                    <button id="btn-add-song" class="btn-add-song">Tambah Lagu</button>
+                    <p class="admin-info">💡 Lagu akan disimpan di localStorage browser Anda</p>
+                </div>
+            </div>
+
+            <!-- Daftar lagu -->
+            <div class="songs-list">
+                <div id="songs-container" class="songs-container">
+                    <!-- Lagu akan ditambahkan di sini oleh JavaScript -->
+                </div>
+            </div>
+
+            <!-- Audio Player -->
+            <div class="audio-player">
+                <div class="player-info">
+                    <span id="current-song">Belum ada lagu</span>
+                </div>
+                <audio id="audio-player" class="audio-control"></audio>
+                <div class="player-controls">
+                    <button id="btn-prev" class="btn-control">⏮</button>
+                    <button id="btn-play-pause" class="btn-control btn-main">▶</button>
+                    <button id="btn-next" class="btn-control">⏭</button>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+                <div class="time-display">
+                    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HALAMAN 3: GALERI FOTO
+         ============================================ -->
+    <div id="page-gallery" class="page">
+        <div class="gallery-container">
+            <div class="gallery-frame">
+                <img id="gallery-image" src="" alt="Galeri Foto" class="gallery-image">
+            </div>
+            <p class="gallery-counter">
+                Foto <span id="photo-count">1</span> dari <span id="photo-total">5</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HALAMAN 4: TEKS DENGAN TYPING EFFECT
+         ============================================ -->
+    <div id="page-text" class="page">
+        <div class="text-container">
+            <div id="typing-text" class="typing-text"></div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HALAMAN 5: HALAMAN TERAKHIR
+         ============================================ -->
+    <div id="page-final" class="page">
+        <div class="final-container">
+            <div id="clickable-final" class="clickable-final">
+                <h1>✨ Terima Kasih! ✨</h1>
+                <p>Klik untuk kejutan</p>
+            </div>
+            <div id="emoji-container" class="emoji-container"></div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Admin Password -->
+    <div id="admin-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Masuk Mode Admin</h2>
+            <input type="password" id="admin-password" placeholder="Masukkan password admin">
+            <div class="modal-buttons">
+                <button id="btn-modal-confirm" class="btn-modal">Masuk</button>
+                <button id="btn-modal-cancel" class="btn-modal cancel">Batal</button>
+            </div>
+            <p class="password-hint">💡 Password default: 12345</p>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
